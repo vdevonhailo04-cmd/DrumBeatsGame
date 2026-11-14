@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drum Beats Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header>
+    <div>
+      <h1>🥁 DRUM <span>BEATS</span></h1>
+      <p class="subtitle">HIT THE BEATS • KEEP THE RHYTHM</p>
+    </div>
+    <button id="startBtn" class="start">▶ START GAME</button>
+  </header>
+
+  <section class="controls">
+    <div class="control-card"><label for="difficulty">DIFFICULTY</label>
+      <select id="difficulty"><option value="easy">Easy</option><option value="medium">Medium</option><option value="hard">Hard</option></select>
+    </div>
+    <div class="control-card"><label for="bpm">BPM</label><input id="bpm" type="range" min="70" max="160" value="100"><strong id="bpmValue">100</strong></div>
+    <button id="resetBtn" class="reset">↻ RESET</button>
+    <div class="stats">
+      <div class="stat"><small>SCORE</small><strong id="score">0</strong></div>
+      <div class="stat"><small>COMBO</small><strong id="combo">0×</strong></div>
+      <div class="stat"><small>BEST</small><strong id="best">0</strong></div>
+    </div>
+  </section>
+
+  <main class="game">
+    <div class="message" id="message">Pindutin ang START GAME!</div>
+    <div class="playfield" id="playfield">
+      <div class="lane" data-lane="0"></div><div class="lane" data-lane="1"></div><div class="lane" data-lane="2"></div><div class="lane" data-lane="3"></div><div class="lane" data-lane="4"></div>
+      <div class="hit-line"></div>
+    </div>
+    <div class="pads">
+      <button class="pad" data-key="a" style="--c:#28a7ff">A<small>SNARE</small></button>
+      <button class="pad" data-key="s" style="--c:#26e58b">S<small>HI-HAT</small></button>
+      <button class="pad" data-key="d" style="--c:#ffbd2e">D<small>KICK</small></button>
+      <button class="pad" data-key="f" style="--c:#ff4568">F<small>TOM</small></button>
+      <button class="pad" data-key="g" style="--c:#a855f7">G<small>CRASH</small></button>
+    </div>
+  </main>
+
+  <section class="instructions">
+    <div><strong>PAANO LARUIN</strong><br>1. Pindutin ang <strong>START GAME</strong>.<br>2. Pindutin ang katumbas na key kapag malapit na sa hit line ang note.<br>3. Mas sakto ang timing, mas mataas ang score!</div>
+    <div><strong>KEYS</strong><br><span class="key">A</span> Snare &nbsp; <span class="key">S</span> Hi-Hat &nbsp; <span class="key">D</span> Kick &nbsp; <span class="key">F</span> Tom &nbsp; <span class="key">G</span> Crash<br><span class="hint">Tip:</span> Gumamit ng headphones para mas ramdam ang beat.</div>
+  </section>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

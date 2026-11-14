@@ -1,0 +1,36 @@
+:root{--bg:#080d19;--panel:#101a2b;--line:#233450;--text:#eef4ff;--muted:#9db1d3;--purple:#8b5cf6}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top,#172341 0%,#080d19 60%);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;padding:22px}
+  .app{max-width:1120px;margin:auto}
+  header{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:20px}
+  h1{margin:0;font-size:clamp(2rem,5vw,3.6rem);letter-spacing:2px;font-weight:900}
+  h1 span{color:#a78bfa}
+  .subtitle{color:var(--muted);margin:6px 0 0;letter-spacing:2px;font-size:.8rem}
+  button,select{font:inherit}
+  button{cursor:pointer;border:0;color:white;font-weight:800;border-radius:12px;padding:12px 18px;transition:transform .12s,filter .12s}
+  button:hover{filter:brightness(1.12)}button:active{transform:scale(.96)}
+  .start{background:linear-gradient(135deg,#8b5cf6,#6d28d9);box-shadow:0 7px 25px #8b5cf633}
+  .reset{background:#263550}
+  .controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+  .control-card,.stat,.instructions{background:#0e1829d9;border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+  .control-card{display:flex;align-items:center;gap:10px;color:var(--muted)}
+  select{background:#17243a;color:white;border:1px solid #334765;border-radius:8px;padding:8px}
+  .stats{margin-left:auto;display:flex;gap:10px}
+  .stat{min-width:110px}.stat small{display:block;color:var(--muted);font-weight:700;letter-spacing:1px}.stat strong{font-size:1.65rem;display:block;margin-top:3px}
+  .game{position:relative;background:linear-gradient(180deg,#080d17,#0a1220);border:1px solid #2b3b59;border-radius:18px;overflow:hidden;box-shadow:0 18px 55px #0005}
+  .playfield{height:430px;position:relative;display:grid;grid-template-columns:repeat(5,1fr);overflow:hidden}
+  .lane{position:relative;border-right:1px solid #25334d;background:linear-gradient(180deg,#0b1322,#101a2c)}
+  .lane:last-child{border:0}
+  .lane:nth-child(1){--c:#28a7ff}.lane:nth-child(2){--c:#26e58b}.lane:nth-child(3){--c:#ffbd2e}.lane:nth-child(4){--c:#ff4568}.lane:nth-child(5){--c:#a855f7}
+  .lane:before{content:"";position:absolute;inset:0 25% 0;background:var(--c);opacity:.045;pointer-events:none}
+  .hit-line{position:absolute;left:0;right:0;bottom:96px;height:4px;background:linear-gradient(90deg,#28a7ff,#26e58b,#ffbd2e,#ff4568,#a855f7);box-shadow:0 0 18px #8b5cf688;z-index:2}
+  .note{position:absolute;width:56%;height:22px;left:22%;border-radius:7px;background:var(--c);box-shadow:0 0 18px color-mix(in srgb,var(--c),transparent 30%);z-index:3}
+  .pads{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;padding:0 12px 14px;position:relative;z-index:4;margin-top:-82px}
+  .pad{height:74px;border-radius:50px;background:linear-gradient(180deg,color-mix(in srgb,var(--c),#fff 10%),color-mix(in srgb,var(--c),#111 20%));border:4px solid color-mix(in srgb,var(--c),#fff 20%);box-shadow:0 8px 0 #111a,0 0 18px color-mix(in srgb,var(--c),transparent 70%);font-size:1.5rem;text-shadow:0 2px 4px #0007}
+  .pad small{display:block;font-size:.72rem;letter-spacing:.5px;margin-top:2px}
+  .pad.flash{filter:brightness(1.5);transform:translateY(4px);box-shadow:0 3px 0 #111a,0 0 28px var(--c)}
+  .message{position:absolute;top:18px;left:50%;transform:translateX(-50%);z-index:5;font-weight:900;font-size:1.2rem;text-shadow:0 2px 12px #000;pointer-events:none}
+  .instructions{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px;color:var(--muted);line-height:1.7}
+  .instructions strong{color:#e8eeff}.key{display:inline-grid;place-items:center;background:#1d2b44;color:white;border:1px solid #3a4e70;border-radius:6px;min-width:27px;padding:0 6px;font-weight:900}
+  .hint{color:#a78bfa;font-weight:700}
+  @media(max-width:650px){body{padding:12px}.stats{margin-left:0;width:100%}.stat{flex:1}.playfield{height:360px}.hit-line{bottom:87px}.pads{margin-top:-74px;padding:0 7px 12px;gap:5px}.pad{height:62px;font-size:1.2rem;border-width:3px}.pad small{font-size:.58rem}.instructions{grid-template-columns:1fr}.control-card{width:100%;justify-content:space-between}}
